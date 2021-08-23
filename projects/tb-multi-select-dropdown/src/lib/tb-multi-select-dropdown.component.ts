@@ -184,7 +184,7 @@ export class TbMultiSelectDropdownComponent implements OnInit {
 if(!this.dropDownSettings.singleSelection)
   {  if (event) {
       this.selectedOptions = [];
-      this.userData.map(d => {
+      this.panelData.map(d => {
         d.isSelected = true;
         let newSelectedObj = {
           idField: d[this.idField],
@@ -194,7 +194,7 @@ if(!this.dropDownSettings.singleSelection)
         return d;
       })
     } else {
-      this.userData.map(d => {
+      this.panelData.map(d => {
         d.isSelected = false;
         return d;
       })
@@ -207,10 +207,10 @@ if(!this.dropDownSettings.singleSelection)
 
   }
   setValues(data: any) {  
-    if (this.userData.length > 0) {
+    if (this.panelData.length > 0) {
       this.selectedOptions = [];
       if (this.dropDownSettings.singleSelection) {
-        var findIdex = this.userData.find(x => x[this.idField] == data);
+        var findIdex = this.panelData.find(x => x[this.idField] == data);
         let newSelectedObj = {
           idField: findIdex[this.idField],
           textField: findIdex[this.textField],
