@@ -96,12 +96,7 @@ ngOnInit() {
 ```
 
 # Settings
-| Settings | Type | Description | Default Value |
-|----------|------|-------------|---------------|
-|          |      |             |               |
-|          |      |             |               |
-|          |      |             |               |
-```
+
 
 
 | Setting        | Type           | Description  | Default Value|
@@ -120,7 +115,6 @@ ngOnInit() {
 |dropDownSettings.allowSearchFilter| boolean | optional settings to toggle search filter feature | true|
 
 
-```
 
 # Callback ()
 change - Return the selected item(s) id(s) when an item or multiple items is/are checked/selected. Example : (change)="itemSelect($event)"
