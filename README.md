@@ -96,13 +96,13 @@ ngOnInit() {
 ```
 
 # Settings
-
-```
 | Settings | Type | Description | Default Value |
 |----------|------|-------------|---------------|
 |          |      |             |               |
 |          |      |             |               |
 |          |      |             |               |
+```
+
 
 | Setting        | Type           | Description  | Default Value|
 | ------------- |:-------------:| -----:| -------------:|
