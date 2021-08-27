@@ -98,6 +98,17 @@ ngOnInit() {
 # Settings
 
 ```
+<table>
+<thead>
+<th>Setting</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default Value</th>
+</thead>
+<tbody>
+</tbody>
+</table>
+
 | Setting        | Type           | Description  | Default Value|
 | ------------- |:-------------:| -----:| -------------:|
 |      data     | Array | Array of items to select from. Should be an array of objects,the id and text properties must be as it is in the component settings.  |    []           |
