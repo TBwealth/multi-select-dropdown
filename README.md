@@ -14,7 +14,7 @@ An Angular(11+cd) Multi-Select Dropdown Component with search option
 - customizable item color and background color
 
 ## Demo
-Here is a [Demo](https://TBwealth.github.io)
+Here is a [Demo](https://tbwealth.github.io/)
 
 ## Install
 ```
