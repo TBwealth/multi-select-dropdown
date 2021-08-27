@@ -100,7 +100,7 @@ ngOnInit() {
 
 
 | Setting        | Type           | Description  | Default Value|
-| ------------- |:-------------:| -----:| -------------:|
+| ------------- |-------------| -----| -------------|
 |      data     | Array | Array of items to select from. Should be an array of objects,the id and text properties must be as it is in the component settings.  |    []           |
 | idField      | String      | Name of the id field as it is in the data value |         "id"      |
 | textField | String      |    Name of the dispaly field as it is in the data value |    "name"           |
