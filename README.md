@@ -14,7 +14,7 @@ An Angular(11+cd) Multi-Select Dropdown Component with search option
 - customizable item color and background color
 
 ## Demo
-Here is a [Demo](https://TBwealth.github.io)
+Here is a [Demo](https://tbwealth.github.io/)
 
 ## Install
 ```
@@ -97,20 +97,10 @@ ngOnInit() {
 
 # Settings
 
-```
-<table>
-<thead>
-<th>Setting</th>
-<th>Type</th>
-<th>Description</th>
-<th>Default Value</th>
-</thead>
-<tbody>
-</tbody>
-</table>
+
 
 | Setting        | Type           | Description  | Default Value|
-| ------------- |:-------------:| -----:| -------------:|
+| ------------- |-------------| -----| -------------|
 |      data     | Array | Array of items to select from. Should be an array of objects,the id and text properties must be as it is in the component settings.  |    []           |
 | idField      | String      | Name of the id field as it is in the data value |         "id"      |
 | textField | String      |    Name of the dispaly field as it is in the data value |    "name"           |
@@ -125,7 +115,6 @@ ngOnInit() {
 |dropDownSettings.allowSearchFilter| boolean | optional settings to toggle search filter feature | true|
 
 
-```
 
 # Callback ()
 change - Return the selected item(s) id(s) when an item or multiple items is/are checked/selected. Example : (change)="itemSelect($event)"
