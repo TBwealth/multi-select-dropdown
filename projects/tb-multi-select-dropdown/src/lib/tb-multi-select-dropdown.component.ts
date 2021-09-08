@@ -15,6 +15,22 @@ export interface dropDownSetting{
     cursor: not-allowed;
     opacity: 0.4;
   }
+  .form-control{
+    display: block;
+    width: 98%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    box-shadow: none;
+  }
   </style>
 <div style="position: relative;
 width: 100%;
@@ -41,7 +57,7 @@ border-radius: 4px;" >
 <div style="display: flex;flex-direction: row;box-sizing: border-box;" >
   <div  style="flex:auto;display: flex;flex-direction: row;overflow:hidden;white-space: nowrap;">
       <div *ngFor="let sel of selectedOptions;let i = index" style="width: 7.8rem;">
-      <div style="display: flex;flex-direction: row;  
+      <div *ngIf="dropDownSettings.itemsShowLimit > i"  style="display: flex;flex-direction: row;  
       font-weight:500;
       padding:2px 4px;
       min-width: 33px;
@@ -101,18 +117,19 @@ border-right: 7px solid transparent;cursor: pointer;">
   </div>
   <div *ngIf="!empty" style="display: flex;flex-direction: column; padding: 10px;">
   <div *ngIf="!dropDownSettings.singleSelection" style="display: flex;flex-direction: row;">
-       <input #selectAll (change)="checkedAcction(selectAll.checked)" [checked]="bulkAction_isChecked" name="" class="form-control" type="checkbox"> 
+       <input #selectAll (change)="checkedAcction(selectAll.checked)" [checked]="bulkAction_isChecked" name=""  type="checkbox"> 
        <div style="padding-left: 5px;display: flex;align-items: center;">
           <span *ngIf="!bulkAction_isChecked" >Select All</span>
           <span *ngIf="bulkAction_isChecked">UnSelect All</span>
       </div>
   </div>
-  <div *ngIf="dropDownSettings.allowSearchFilter"><input (keyup)="handleSearch(searchPara.value)" #searchPara class="form-control" name=""  type="text" [placeholder]="'Filter Option List'"></div>
+  <div *ngIf="dropDownSettings.allowSearchFilter">
+  <input (keyup)="handleSearch(searchPara.value)" #searchPara class="form-control" name=""  type="text" [placeholder]="'Filter Option List'"></div>
   <div *ngFor="let data of userData;let i = index" style="padding-top: 10px;" >
-      <div *ngIf="!dropDownSettings.singleSelection"  (click)="selectOption(i,data,chkbox.checked)" style="display: flex;flex-direction: row;cursor: pointer;">
+      <div *ngIf="!dropDownSettings.singleSelection"  (click)="selectOption(i,data,data['isSelected'])" style="display: flex;flex-direction: row;cursor: pointer;">
       <div>
           <div class="form-check">
-              <input name="" class="form-control" #chkbox type="checkbox" [checked]="data['isSelected']">
+              <input name=""  #chkbox type="checkbox" [checked]="data['isSelected']">
               
           </div>
         
@@ -251,8 +268,8 @@ if(!this.dropDownSettings.singleSelection)
 
   selectOption(colIndex, data, event) {
     if(!this.dropDownSettings.singleSelection){
-    this.userData[colIndex].isSelected = event ? true : false;
-      if (event) {
+    this.userData[colIndex].isSelected = event ? false : true;
+      if (!event) {
         let newSelectedObj = {
           idField: data[this.idField],
           textField: data[this.textField],
